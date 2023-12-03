@@ -1,8 +1,8 @@
 version: 0.0
-os: linus
+os: linux
 
 files:
-  - source: /
+  - source:  /
     destination: /home/ubuntu/app
     overwrite: yes
 
@@ -13,11 +13,11 @@ permissions:
     group: ubuntu
 
 hooks:
-    AfterInstall:
-      - location: scripts/stop.sh
-        timeout: 60
-        runas: ubuntu
-    ApplicationStart:
-      - location: scripts/start.sh
-        timeout: 60
-        runas: ubuntu
+  AfterInstall:
+    - location: scripts/stop.sh
+      timeout: 60
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 60
+      runas: ubuntu
